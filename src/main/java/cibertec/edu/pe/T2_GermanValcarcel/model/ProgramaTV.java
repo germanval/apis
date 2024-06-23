@@ -1,8 +1,7 @@
 package cibertec.edu.pe.T2_GermanValcarcel.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +11,11 @@ import java.util.Date;
 
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Table(name = "programatv")
 public class ProgramaTV {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idprogramatv;
     private String titulo;
     private String resumen;
